@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+  <head>
+
+    <title> Namra</title>
+    <script>
+      let count=0;
+      function Counter()
+      {
+        count=count+1;
+        document.querySelector('h1').innerHTML=count;
+        if (count % 10===0)
+
+      {
+        alert(`The value of counter is, ${count}!`);
+      }
+    }
+
+    </script>
+  </head>
+  <body>
+    <h1>Hello </h1>
+    <button onclick="Counter()" name="button"> Click Me</button>
+
+  </body>
+</html>

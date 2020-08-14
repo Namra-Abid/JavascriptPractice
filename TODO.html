@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <title> TO DO </title>
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelector('form').onsubmit= ()=> {
+        const task =document.querySelector('#taskinput').value;
+        console.log(task);
+        const li =document.createElement('li');
+        li.innerHTML=task;
+        document.querySelector('#tasks').append(li);
+          document.querySelector('#taskinput').value='';
+        //stop fromsubmitting
+        return false;
+      }
+    });
+    </script>
   </head>
   <body>
   <h1> Task </h1>
   <ul id="tasks">
   </ul>
   <form >
-    <input id="task" placeholder="NewTask" type="text">
+    <input id="taskinput" placeholder="NewTask" type="text">
+    <input type="submit">
   </form>
   </body>
 </html>

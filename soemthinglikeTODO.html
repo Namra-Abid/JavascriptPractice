@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Colors Change</title>
+    <script>
+      document.addEventListener('DOMContentLoaded',() =>{
+
+         document.querySelector('select').onchange= function() {
+           document.querySelector('#months').style.color= this.value;
+          var task= document.getElementById('me').value;
+          //alert(task);
+           const li =document.createElement('li');
+           li.innerHTML=task;
+           document.querySelector('#tasks').append(li);
+
+           //stop fromsubmitting
+           return false;
+
+         }
+      });
+
+    </script>
+  </head>
+  <body>
+    <h1 id="months"> Select Months in Correct Order! </h1>
+    <select id="me">
+      <option selected disabled>Choose one</option>
+      <option value='January'> January </option>
+      <option value='Febrauray'> Febrauray </option>
+      <option value=' March'> March </option>
+      <option value='April'> April </opion>
+      <option value=' May'> May </option>
+      <option value='June'> June </option>
+      <option value='July'> July </option>
+      <option value='August'> August </option>
+      <option value='September'> September </option>
+      <option value='November'> November </option>
+      <option value='December'>December </option>
+
+    </select>
+    <ul id="tasks">
+    </ul>
+  </body>
+</html>

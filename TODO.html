@@ -4,13 +4,20 @@
     <title> TO DO </title>
     <script>
     document.addEventListener('DOMContentLoaded',function(){
-      document.querySelector('form').onsubmit= ()=> {
+      //bydefault submit button is disabled
+     document.querySelector('#submit').disabled=true;
+      // it will listen if something is typed on keyboard
+     document.querySelector('#taskinput').onkeyup = ()=> {
+            document.querySelector('#submit').disabled=false;
+          };
+     document.querySelector('form').onsubmit= ()=> {
         const task =document.querySelector('#taskinput').value;
         console.log(task);
         const li =document.createElement('li');
         li.innerHTML=task;
         document.querySelector('#tasks').append(li);
           document.querySelector('#taskinput').value='';
+          document.querySelector('#submit').disabled = true;
         //stop fromsubmitting
         return false;
       }
@@ -23,7 +30,7 @@
   </ul>
   <form >
     <input id="taskinput" placeholder="NewTask" type="text">
-    <input type="submit">
+    <input id="submit" type="submit">
   </form>
   </body>
 </html>
